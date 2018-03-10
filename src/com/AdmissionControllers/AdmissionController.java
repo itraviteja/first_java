@@ -12,20 +12,23 @@ import org.springframework.web.servlet.ModelAndView;
 public class AdmissionController 
 {
 	@RequestMapping(value="/Admission.html",method=RequestMethod.GET)
-	public ModelAndView admission()
+	public ModelAndView admission()throws Exception
 	{
-		ModelAndView mv=new ModelAndView("AdmissionForm");
-		System.out.println("from git hub");
-		System.out.println("ravi");
-		System.out.println("hai gitty");
 		
-		return mv;
+		NullPointerException ne=new NullPointerException();
+		throw ne;
+		
+		
+		
+		
 	}
-	@ExceptionHandler(value=Exception.class)
-	public String exp()
+	@ExceptionHandler(value=NullPointerException.class)
+	public ModelAndView exp(Exception e)
 	{
-		System.out.println("exception occurs");
-		return "Exception";
+		System.out.println("exception occurs"+e);
+		ModelAndView mv=new ModelAndView("Exception");
+		mv.addObject("e",e);
+		return mv;
 	}
 	
 	@RequestMapping(value="/Admin.html",method=RequestMethod.POST)
