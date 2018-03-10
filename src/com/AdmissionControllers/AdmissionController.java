@@ -16,14 +16,14 @@ public class AdmissionController
 	{
 		ModelAndView mv=new ModelAndView("AdmissionForm");
 		System.out.println("from git hub");
-		System.out.println("hello git");
+		System.out.println("hai gitty");
 		
 		return mv;
 	}
 	@ExceptionHandler(value=Exception.class)
 	public String exp()
 	{
-		System.out.println("exception occured");
+		System.out.println("exception occurs");
 		return "Exception";
 	}
 	
