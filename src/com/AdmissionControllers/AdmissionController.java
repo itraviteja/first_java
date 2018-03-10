@@ -15,6 +15,7 @@ public class AdmissionController
 	public ModelAndView admission()
 	{
 		ModelAndView mv=new ModelAndView("AdmissionForm");
+		System.out.println("from git hub");
 		
 		return mv;
 	}
